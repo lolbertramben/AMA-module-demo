@@ -13,6 +13,7 @@ a { text-decoration: none; color: inherit; }
 
 /* Navigation styles */
 header { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.8); display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding: 10px 20px; z-index: 100; }
+header img { height: 20px; width: auto; }
 nav { font-family: 'Arial', sans-serif; display:flex; flex-direction: row; gap: 15px; }
 /* Footer styles */
 footer { width: 100%; padding: 20px; text-align: center; background: #f8f8f8; font-family: 'Arial', sans-serif; font-size: 14px; color: #555; }
