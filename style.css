@@ -2,29 +2,7 @@
 a { text-decoration: none; color: inherit; }
 .page { width: 100%; position: relative; }
 
-:root {
-    --slideshow-mask-gradient: linear-gradient(to bottom, transparent 0vh, black 75vh);
-    --slideshow-transition: 75vh;
-    --slideshow-height: 200vh;
-}
-
-.background-image .cut-out-section { height: 150vh; }
-.fixed-slideshow .cut-out-section { height: 125vh; }
-.cut-out-section { width: 100%; position:relative; clip-path: inset(0 0 0 0) }
-.cut-out-section picture { width: 100%; height: 100%; display: block; }
-.cut-out-section img { width: 100%; height: 100%; position: fixed; top: 0; left: 0; object-fit: cover;}
-.cut-out-section .overlay { width: 100%; height: 100%; position: absolute; top: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.25) 25%, rgba(0,0,0,0) 75%); }
-
-.fade-slideshow .cut-out-section { height: calc(var(--slideshow-height) + 2 * var(--slideshow-transition)); }
-/* .fade-slideshow .cut-out-section ~ .cut-out-section { height: calc(var(--slideshow-height) + 2 * var(--slideshow-transition)); } */
-.fade-slideshow .cut-out-section:last-child { height: calc(var(--slideshow-height) +  var(--slideshow-transition)); }
-.fade-slideshow { width: 100%; position: relative; }
-.fade-slideshow .cut-out-section .overlay { width: 100%; height: 100%; position: absolute; top: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0vh, rgba(0,0,0,0.25) 25vh, rgba(0,0,0,0) 100vh); }
-.fade-slideshow .cut-out-section { width: 100%; position: relative; top: calc(var(--slideshow-transition) * var(--i) * -1) }
-.fade-slideshow .cut-out-section picture { width: 100%; height: 100%; display: block;}
-.fade-slideshow .cut-out-section ~ .cut-out-section picture { width: 100%; height: 100%; display: block; -webkit-mask-image: var(--slideshow-mask-gradient); mask-image: var(--slideshow-mask-gradient); }
-.fade-slideshow .cut-out-section img { width: 100%; height: 100vh; position: fixed; top: 0; left: 0; object-fit: cover; }
-
+/* Spacer sections */
 .spacer-section { width: 100%; height: 80vh; }
 
 /* Navigation styles */
@@ -33,3 +11,28 @@ header img { height: 20px; width: auto; }
 nav { font-family: 'Arial', sans-serif; display:flex; flex-direction: row; gap: 15px; }
 /* Footer styles */
 footer { width: 100%; padding: 20px; text-align: center; background: #f8f8f8; font-family: 'Arial', sans-serif; font-size: 14px; color: #555; }
+
+
+:root {
+    --slideshow-mask-gradient: linear-gradient(to bottom, transparent 0vh, black 75vh);
+    --slideshow-transition: 75vh;
+    --slideshow-height: 200vh;
+}
+
+/* Background image + Sharp transition slideshow */
+.background-image .cut-out-section { height: 150vh; }
+.fixed-slideshow .cut-out-section { height: 125vh; }
+.cut-out-section { width: 100%; position:relative; clip-path: inset(0 0 0 0) }
+.cut-out-section picture { width: 100%; height: 100%; display: block; }
+.cut-out-section img { width: 100%; height: 100%; position: fixed; top: 0; left: 0; object-fit: cover;}
+.cut-out-section .overlay { width: 100%; height: 100%; position: absolute; top: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.25) 25%, rgba(0,0,0,0) 75%); }
+
+/* Fade transition slideshow */
+.fade-slideshow .cut-out-section { height: calc(var(--slideshow-height) + 2 * var(--slideshow-transition)); }
+.fade-slideshow .cut-out-section:last-child { height: calc(var(--slideshow-height) +  var(--slideshow-transition)); }
+.fade-slideshow { width: 100%; position: relative; }
+.fade-slideshow .cut-out-section .overlay { width: 100%; height: 100%; position: absolute; top: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0vh, rgba(0,0,0,0.25) 25vh, rgba(0,0,0,0) 100vh); }
+.fade-slideshow .cut-out-section { width: 100%; position: relative; top: calc(var(--slideshow-transition) * var(--i) * -1) }
+.fade-slideshow .cut-out-section picture { width: 100%; height: 100%; display: block;}
+.fade-slideshow .cut-out-section ~ .cut-out-section picture { width: 100%; height: 100%; display: block; -webkit-mask-image: var(--slideshow-mask-gradient); mask-image: var(--slideshow-mask-gradient); }
+.fade-slideshow .cut-out-section img { width: 100%; height: 100vh; position: fixed; top: 0; left: 0; object-fit: cover; }
